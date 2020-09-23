@@ -6,7 +6,7 @@
 
         <v-list-item v-for="item in items" :key="item.text" link>
           <v-list-item-action>
-            <v-icon>mdi-clock</v-icon>
+            <v-icon>mdi-format-list-checks</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>
@@ -70,6 +70,7 @@
       <v-container class="fill-height">
         <v-row justify="center" align="center">
           <v-col class="shrink"> </v-col>
+          <EditButton />
         </v-row>
       </v-container>
     </v-main>
@@ -77,9 +78,14 @@
 </template>
 
 <script>
+import EditButton from "@/components/editbutton.vue";
+
 export default {
   props: {
     source: String,
+  },
+  components: {
+    EditButton,
   },
   data: () => ({
     drawer: null,
@@ -108,6 +114,14 @@ export default {
         canceled: false,
         date: 1389992494240,
       },
+      {
+        id: 4,
+        title: "fourth todo",
+        description: "go for a run",
+        complete: false,
+        canceled: false,
+        date: 1389992494250,
+      },
     ],
     items2: [
       { picture: 28, text: "Joseph" },
@@ -122,5 +136,4 @@ export default {
   },
 };
 </script>
-© 2020 GitHub, Inc. Terms Privacy Security Status Help Contact GitHub Pricing
-API Training Blog About
+
