@@ -67,10 +67,9 @@
     </v-app-bar>
 
     <v-main>
-      <v-container class="fill-height">
-        <v-row justify="center" align="center">
-          <v-col class="shrink"> </v-col>
-          <EditButton />
+      <v-container>
+        <v-row align="center">
+          <v-col> <router-view></router-view> </v-col>
         </v-row>
       </v-container>
     </v-main>
@@ -78,15 +77,11 @@
 </template>
 
 <script>
-import EditButton from "@/components/editbutton.vue";
-
 export default {
   props: {
     source: String,
   },
-  components: {
-    EditButton,
-  },
+  components: {},
   data: () => ({
     drawer: null,
     items: [
